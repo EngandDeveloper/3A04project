@@ -16,8 +16,8 @@ public class PatternMatchingController : MonoBehaviour
         
     }
 
-    void onClickFunction(){
-        
+    public void onClickFunction(){
+        Debug.Log("Clicked");
     }
 
 }
