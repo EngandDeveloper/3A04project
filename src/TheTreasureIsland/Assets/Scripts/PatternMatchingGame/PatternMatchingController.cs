@@ -27,10 +27,10 @@ public class PatternMatchingController : MonoBehaviour
 
     //***** Variables Start *****\\
     public Button[] buttons;
+    int[] answerMap;
     private int[] currentMap;
-    private ColorBlock c0;
-    private ColorBlock c1;
     bool isFirst = true; //use it to show the pattern
+    bool isTrue; //use it to check the player answer correctness
     PatternMatchingAbstraction abstraction;
     //***** Variables End *****\\
 
@@ -38,11 +38,13 @@ public class PatternMatchingController : MonoBehaviour
     IEnumerator showPattern(){
         abstraction.generatePattern();
         currentMap = abstraction.getPatternMap();
-        Debug.Log("Current Map is:");
         
-        for(int i = 0; i < currentMap.Length; i++){
-            Debug.Log(currentMap[i]);
-        }
+        /* Debug logs to see the current map generation*/
+        // Debug.Log("Current Map is:");
+        
+        // for(int i = 0; i < currentMap.Length; i++){
+        //     Debug.Log(currentMap[i]);
+        // }
 
         for(int i = 0; i < currentMap.Length; i++){
             if(currentMap[i] == 1){
@@ -68,12 +70,46 @@ public class PatternMatchingController : MonoBehaviour
     //     isFirst = false;
     // }
 
+    /**
+    * @brief get the id of the button pressed and assign it to the answerMap
+    */
+    public void getButtonId(int btnIndex){
+        answerMap[btnIndex] = 1; //Set the answer
+        Debug.Log(btnIndex);
+    }
+
+    /**
+    * @brief check player's answer against the currentMap
+    */
+    public void checkAnswer(){
+        isTrue = true;
+        for(int i = 0; i < currentMap.Length; i++){
+            if(currentMap[i] != answerMap[i]){
+                isTrue = false;
+                break;
+            }
+        }
+        Debug.Log(isTrue);
+        //TODO: Based on the result congragulate the user or restart the game
+    }
+
+    /**
+    * @brief reset player answers
+    */
+    public void resetAnswerMap(){
+        for(int i = 0; i < answerMap.Length; i++){
+            answerMap[i] = 0;
+        }
+    }
+
 
     // Start is called before the first frame update
     void Start()
     {
         buttons = new Button[] {B0, B1, B2, B3, B4, B5, B6, B7, B8, B9, B10, B11, B12, B13, B14, B15};
+        answerMap = new int[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         abstraction = new PatternMatchingAbstraction();
+
         // currentMap = new int[] {0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1};
         // StopCoroutine("showPattern");    // Interrupt in case it's running
         // StartCoroutine("showPattern");

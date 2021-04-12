@@ -54,11 +54,12 @@ public class PatternMatchingAbstraction
     *  @brief function to generate new pattern
     */
     public void generatePattern(){
+        //TODO: Compansate for the fact that the random number might be the same (ensure the pattern length of 5)
         System.Random r = new System.Random();
         if(level == 1){
             for(int i = 0; i < 5; i++){
                 int random = r.Next(0,15);
-                Debug.Log("Random number is:" + random);
+                // Debug.Log("Random number is:" + random);
                 //Open the index of the random button to create the pattern
                 patternMap[random] = 1;
             }
