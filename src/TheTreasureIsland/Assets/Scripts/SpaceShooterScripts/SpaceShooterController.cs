@@ -42,7 +42,7 @@ public class SpaceShooterController : MonoBehaviour
     }
     public static int EndLevel()
     {
-        return 10;
+        return 6;
     }
 
     public  void SetLevel(int level)
