@@ -18,7 +18,9 @@ public class TetrisBlock : MonoBehaviour
     public int scoreThreeLines = 50;
     public int scoreFourLines = 100;
     private int numberOfRowsThisTurn = 0;
-    public int currentScore = 0;
+    public float maxScore = 1000;
+    public float minScore = 100;
+    public float currentScore;
 
     // Start is called before the first frame update
     void Start()
@@ -64,6 +66,9 @@ public class TetrisBlock : MonoBehaviour
                 AddToGrid();
                 CheckForLines();
                 if (ScoreScript.scoreValue >= 10){
+                    updateScore();
+                    ScoreController.updateScore(currentScore);
+                    GameController.endTurn();
                     GameOver();
                 }
                 
@@ -78,22 +83,10 @@ public class TetrisBlock : MonoBehaviour
 
     public void updateScore()
     {
-        if (numberOfRowsThisTurn > 0){
-
-            if (numberOfRowsThisTurn == 1){
-                currentScore += scoreOneLine;
-
-            } else if (numberOfRowsThisTurn == 2){
-                currentScore += scoreTwoLines;
-
-            } else if (numberOfRowsThisTurn == 3){
-                currentScore += scoreThreeLines;
-
-            } else if (numberOfRowsThisTurn == 4){
-                currentScore += scoreFourLines;
-
-            }
-            numberOfRowsThisTurn = 0;
+        int x = (int) TimerController.t/10;
+        currentScore = maxScore - 10*x;
+        if (currentScore < minScore){
+            currentScore = minScore;
         }
     }
 
