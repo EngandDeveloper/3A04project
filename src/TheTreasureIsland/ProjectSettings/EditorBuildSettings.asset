@@ -29,4 +29,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TetrisGameOver.unity
     guid: adb894270d7c7e640994521dd2ef7f95
+  - enabled: 1
+    path: Assets/Scenes/spaceshooter.unity
+    guid: c68424f9a0839c7499def060ffdd0f6d
+  - enabled: 1
+    path: Assets/Scenes/CarRace.unity
+    guid: 8234a822f0215d84db8d628a8706d9f1
   m_configObjects: {}

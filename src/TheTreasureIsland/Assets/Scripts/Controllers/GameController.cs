@@ -27,6 +27,22 @@ public class GameController : MonoBehaviour
         changeScene(5);
     }
 
+    public void startSecondGame(){
+        changeScene(8);
+    }
+
+    public void startThirdGame(){
+        changeScene(9);
+    }
+
+    public void startForthGame(){
+        changeScene(6);
+    }
+
+    public void startFifthGame(){
+        changeScene(5);
+    }
+
     public static void resetGame(){
         ScoreController.resetScores();
         turn = 1;

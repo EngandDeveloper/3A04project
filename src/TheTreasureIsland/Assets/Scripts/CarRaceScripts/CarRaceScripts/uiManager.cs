@@ -35,7 +35,7 @@ public class uiManager : MonoBehaviour {
 
 	void scoreUpdate(){
 		if (gameOver == false) {
-			score += 5;
+			score += 1;
 		}
 
 	}
