@@ -109,31 +109,29 @@ public class SpaceShooterPresentation : MonoBehaviour
 
     public void reStart()
     {
-        if (SpaceShooterController.GetHealth() <= 0)
-        {
-            SpaceShooterController.SetTime();
-            SpaceShooterController.gameLevel = 1;
-            SpaceShooterAbstraction.score = 0;
-            var enemy = GameObject.FindGameObjectsWithTag("enemy");
-            var laser1 = GameObject.FindGameObjectsWithTag("laser1");
-            var laser2 = GameObject.FindGameObjectsWithTag("laser2");
-            foreach (var clone in enemy)
-            {
-                Destroy(clone);
-            }
-            foreach (var clone in laser2)
-            {
-                Destroy(clone);
-            }
-            foreach (var clone in laser1)
-            {
-                Destroy(clone);
-            }
 
-            Instantiate(spaceshipPrefab);
-            Instantiate(enemyPrefab);
-            Instantiate(enemyPrefab);
+        SpaceShooterController.SetTime();
+        SpaceShooterController.gameLevel = 1;
+        SpaceShooterController.SetTime();
+        var enemy = GameObject.FindGameObjectsWithTag("enemy");
+        var laser1 = GameObject.FindGameObjectsWithTag("laser1");
+        var laser2 = GameObject.FindGameObjectsWithTag("laser2");
+        foreach (var clone in enemy)
+        {
+            Destroy(clone);
         }
+        foreach (var clone in laser2)
+        {
+            Destroy(clone);
+        }
+        foreach (var clone in laser1)
+        {
+            Destroy(clone);
+        }
+
+        Instantiate(spaceshipPrefab);
+        Instantiate(enemyPrefab);
+        Instantiate(enemyPrefab);
 
     }
 
@@ -143,6 +141,7 @@ public class SpaceShooterPresentation : MonoBehaviour
             float pScore = (float) SpaceShooterAbstraction.score;
             ScoreController.updateScore(pScore);
             GameController.endTurn();
+            reStart();
             SceneManager.LoadScene(7);
         }
     }

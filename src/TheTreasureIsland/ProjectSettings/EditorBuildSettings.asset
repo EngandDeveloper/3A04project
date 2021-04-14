@@ -35,4 +35,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CarRace.unity
     guid: 8234a822f0215d84db8d628a8706d9f1
+  - enabled: 1
+    path: Assets/Scenes/SnakeGameScene.unity
+    guid: da4e78ee2694ec046abbaf2b3a9911b1
+  - enabled: 1
+    path: Assets/Scenes/EndGameResultScreen.unity
+    guid: 5155f3cec0724f04ebdb15f15b2a1949
   m_configObjects: {}

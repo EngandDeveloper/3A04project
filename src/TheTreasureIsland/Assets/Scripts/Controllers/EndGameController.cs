@@ -17,8 +17,17 @@ public class EndGameController : MonoBehaviour
         }else if(gameMode == 2){
             string p2Name = PlayerPrefs.GetString("p2Name");
             float p2Score = PlayerPrefs.GetFloat("p2Score");
-            resultText.text = "Player1: " + p1Name + " --- Score: " + p1Score + "\n Player2: " + p2Name + " --- Score: " + p2Score;
+            string winner = "";
+            if(p1Score > p2Score){
+                winner = p1Name;
+            }else if(p2Score > p1Score){
+                winner = p2Name;
+            }else if(p1Score == p2Score){
+                winner = "Tie";
+            }
+            resultText.text = "Player1: " + p1Name + " --- Score: " + p1Score + "\n Player2: " + p2Name + " --- Score: " + p2Score + "\n Winner: " + winner;
         }
+        ScoreController.validateHighScore();
     }
 
     // Update is called once per frame

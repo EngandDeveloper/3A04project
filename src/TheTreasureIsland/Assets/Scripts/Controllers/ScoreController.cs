@@ -91,7 +91,7 @@ public class ScoreController : MonoBehaviour
     public static bool validateHighScore(){
         bool isHighScore = false;
         float s1 = PlayerPrefs.GetFloat("p1Score");
-            isHighScore = checkHighScore(s1, 1);
+        isHighScore = checkHighScore(s1, 1);
         int gameMode = PlayerPrefs.GetInt("gameMode", 1);
         if(gameMode == 2){
             float s2 = PlayerPrefs.GetFloat("p2Score");
@@ -105,7 +105,7 @@ public class ScoreController : MonoBehaviour
         if(player == 2){
             playerName = PlayerPrefs.GetString("p2Name");
         }
-        for(int i = 0; i < highScores.Length; i++){
+        for(int i = 9; i >= 0; i--){
             if(highScores[i] < score){
                 highScores[i] = score;
                 highNames[i] = playerName;

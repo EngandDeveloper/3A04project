@@ -45,7 +45,7 @@ public class GameController : MonoBehaviour
     }
 
     public void startFifthGame(){
-        changeScene(5);
+        changeScene(10);
     }
 
     public static void resetGame(){
@@ -69,6 +69,11 @@ public class GameController : MonoBehaviour
                 Debug.Log("Turn is: " + turn);
                 isTurnEnded = false;
                 PlayerPrefs.SetInt("tEnds", 0);
+                if(island == 6){
+                    Debug.Log("Game Ended");
+                    //TODO: Call End Game Result Page + Show game ended
+                    SceneManager.LoadScene(11);
+                }
             }else if(turn == 2 && isTurnEnded){
                 turn = 1;
                 PlayerPrefs.SetInt("turn", 1);
@@ -80,9 +85,10 @@ public class GameController : MonoBehaviour
                 if(island != 6){
                     island += 1;
                     PlayerPrefs.SetInt("island", island);
-                }else{
-                    Debug.Log("Game Ended");
-                    //TODO: Call End Game Result Page + Show game ended
+                }else if(island == 6){
+                    // Debug.Log("Game Ended");
+                    // //TODO: Call End Game Result Page + Show game ended
+                    // SceneManager.LoadScene(11);
                 }
             }
         }else if(gameMode == 1){
@@ -95,9 +101,10 @@ public class GameController : MonoBehaviour
                 if(island != 6){
                     island += 1;
                     PlayerPrefs.SetInt("island", island);
-                }else{
+                }else if(island == 6){
                     Debug.Log("Game Ended");
                     //TODO: Call End Game Result Page + Show game ended
+                    SceneManager.LoadScene(11);
                 }
             }
         }
@@ -150,6 +157,10 @@ public class GameController : MonoBehaviour
         if(isTurnEnded){
             updateTurnText();
         }
+        int isl = PlayerPrefs.GetInt("island");
+        if(island == 6){
+            changeScene(11);
+        } 
     }
     //TO Fix git
 }
