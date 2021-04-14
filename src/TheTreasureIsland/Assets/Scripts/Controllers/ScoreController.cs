@@ -8,9 +8,6 @@ public class ScoreController : MonoBehaviour
     static float p1Score = 0f; 
     static float p2Score = 0f; 
 
-    // GameController gameController;
-
-
     public static void updateScore(float score){
         int player = GameController.getTurn();
         p1Score = PlayerPrefs.GetFloat("p1Score");

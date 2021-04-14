@@ -69,6 +69,8 @@ public class GameController : MonoBehaviour
                 turn = 1;
                 PlayerPrefs.SetInt("turn", 1);
                 island = PlayerPrefs.GetInt("island", 1);
+                isTurnEnded = false;
+                PlayerPrefs.SetInt("tEnds", 0);
                 if(island != 6){
                     island += 1;
                     PlayerPrefs.SetInt("island", island);

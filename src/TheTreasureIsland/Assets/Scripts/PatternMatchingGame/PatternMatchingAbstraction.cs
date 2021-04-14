@@ -61,7 +61,11 @@ public class PatternMatchingAbstraction
                 int random = r.Next(0,15);
                 // Debug.Log("Random number is:" + random);
                 //Open the index of the random button to create the pattern
-                patternMap[random] = 1;
+                if(patternMap[random] != 1){
+                    patternMap[random] = 1;
+                }else if(patternMap[random] == 1){
+                    i -= 1;
+                }
             }
         }
         // }else if(level == 2){
