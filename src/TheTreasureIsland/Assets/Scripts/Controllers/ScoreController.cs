@@ -147,6 +147,35 @@ public class ScoreController : MonoBehaviour
         }
     }
 
+    public static string innnovativeFeature(){
+        string result = "Not enough data for prediction";
+        PlayerPrefs.SetString("innovate", result);
+        string p1Name = PlayerPrefs.GetString("p1Name");
+        string p2Name = PlayerPrefs.GetString("p2Name");
+        int num1 = 0;
+        int num2 = 0;
+        for(int i = 0; i < highNames.Length; i++){
+            if(p1Name.Equals(highNames[i])){
+                num1 += 1;
+            }else if(p2Name.Equals(highNames[i])){
+                num2 += 1;
+            }
+        }
+
+        if(num1 == 0 && num2 == 0){
+            return result;
+        }else if(num1 > num2){
+            result = " " + p1Name + " will win the game";
+            PlayerPrefs.SetString("innovate", result);
+            return result;
+        }else if(num1 <= num2){
+            result = " " + p2Name + " will win the game";
+            PlayerPrefs.SetString("innovate", result);
+            return result;
+        }
+        return result;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

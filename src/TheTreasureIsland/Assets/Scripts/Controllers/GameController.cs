@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
     static int island = 1; //Which mini game (island) the players are on
     static bool isTurnEnded = false;
     public Text turnText;
+    public Text innovateText;
     string player1Name;
     string player2Name;
 
@@ -118,6 +119,12 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public void updateInnovateText(){
+        ScoreController.innnovativeFeature();
+        string result = PlayerPrefs.GetString("innovate");
+        innovateText.text = result;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -127,6 +134,7 @@ public class GameController : MonoBehaviour
         player2Name = PlayerPrefs.GetString("p2Name", "Player 2");
         // PlayerPrefs.SetInt("turn", 1);
         updateTurnText();
+        updateInnovateText();
     }
 
     // Update is called once per frame

@@ -219,6 +219,9 @@ RectTransform:
   - {fileID: 1580919377}
   - {fileID: 400614472}
   - {fileID: 596609840}
+  - {fileID: 354785182}
+  - {fileID: 1179753502}
+  - {fileID: 151988716}
   m_Father: {fileID: 1786124742}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -294,12 +297,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1150988730}
-  m_Father: {fileID: 596609840}
-  m_RootOrder: 3
+  m_Father: {fileID: 134079884}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -360, y: 0}
+  m_AnchoredPosition: {x: -729, y: 0.00091552734}
   m_SizeDelta: {x: 346.4762, y: 489.38245}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &151988717
@@ -369,12 +372,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1692278077}
-  m_Father: {fileID: 596609840}
-  m_RootOrder: 1
+  m_Father: {fileID: 134079884}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 734, y: 0}
+  m_AnchoredPosition: {x: 365, y: 0.00091552734}
   m_SizeDelta: {x: 346.4762, y: 489.38245}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &354785183
@@ -519,9 +522,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 924110661}
-  - {fileID: 354785182}
-  - {fileID: 1179753502}
-  - {fileID: 151988716}
   m_Father: {fileID: 134079884}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -907,7 +907,24 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 'Pattern Matching Tutorial:
+
+
+    * You will be shown a pattern in the
+    beginning of the game.
+
+
+    * Try to remember the buttons which changed color
+    and press those buttons when the pattern ends.
+
+
+    * After you are happy wih
+    your answer click on check answer button. Also you can reset your answer and
+    start from scrahct by clicking reset answering button.
+
+
+    * Goal of the game
+    is to match the pattern in the shortest amount of time.'
 --- !u!222 &1150988732
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -946,12 +963,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1280587787}
-  m_Father: {fileID: 596609840}
-  m_RootOrder: 2
+  m_Father: {fileID: 134079884}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1100, y: 0}
+  m_AnchoredPosition: {x: 731, y: 0.00091552734}
   m_SizeDelta: {x: 346.4762, y: 489.38245}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1179753503
