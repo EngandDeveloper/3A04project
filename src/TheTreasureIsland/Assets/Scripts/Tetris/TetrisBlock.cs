@@ -71,6 +71,7 @@ public class TetrisBlock : MonoBehaviour
                     ScoreController.updateScore(currentScore);
                     GameController.endTurn();
                     GameOver();
+                    ScoreScript.scoreValue = 0;
                 }
                 
                 this.enabled = false;

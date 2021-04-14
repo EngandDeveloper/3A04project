@@ -14,6 +14,11 @@ public class MainMenuController : MonoBehaviour
     public Text soundText;
     int sound = 1;
 
+    public void quitGame(){
+        Application.Quit();
+        Debug.Log("App quitting");
+    }
+
     public void changeScene(int index){
         SceneManager.LoadScene(index);
     }
@@ -82,6 +87,8 @@ public class MainMenuController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // PlayerPrefs.SetString("p1Name", "Player 1");
+        // PlayerPrefs.SetString("p2Name", "Player 2");
         sound = PlayerPrefs.GetInt("sound", 1);
         if(sound == 1){
             soundText.text = "Sound On";

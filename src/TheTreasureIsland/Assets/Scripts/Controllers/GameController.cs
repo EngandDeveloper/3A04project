@@ -69,10 +69,11 @@ public class GameController : MonoBehaviour
                 Debug.Log("Turn is: " + turn);
                 isTurnEnded = false;
                 PlayerPrefs.SetInt("tEnds", 0);
-                if(island == 6){
+                if(island == 5){
                     Debug.Log("Game Ended");
+                    PlayerPrefs.SetInt("isEnded", 1);
                     //TODO: Call End Game Result Page + Show game ended
-                    SceneManager.LoadScene(11);
+                    // SceneManager.LoadScene(11);
                 }
             }else if(turn == 2 && isTurnEnded){
                 turn = 1;
@@ -101,10 +102,12 @@ public class GameController : MonoBehaviour
                 if(island != 6){
                     island += 1;
                     PlayerPrefs.SetInt("island", island);
-                }else if(island == 6){
+                }
+                if(island == 5){
                     Debug.Log("Game Ended");
+                    PlayerPrefs.SetInt("isEnded", 1);
                     //TODO: Call End Game Result Page + Show game ended
-                    SceneManager.LoadScene(11);
+                    // SceneManager.LoadScene(11);
                 }
             }
         }
@@ -141,7 +144,9 @@ public class GameController : MonoBehaviour
         player2Name = PlayerPrefs.GetString("p2Name", "Player 2");
         // PlayerPrefs.SetInt("turn", 1);
         updateTurnText();
-        updateInnovateText();
+        if(gameMode == 2){
+            updateInnovateText();
+        }
     }
 
     // Update is called once per frame
@@ -158,8 +163,10 @@ public class GameController : MonoBehaviour
             updateTurnText();
         }
         int isl = PlayerPrefs.GetInt("island");
-        if(island == 6){
+        int iEnded = PlayerPrefs.GetInt("isEnded");
+        if(island == 6 && iEnded == 1){
             changeScene(11);
+            PlayerPrefs.SetInt("isEnded", 0);
         } 
     }
     //TO Fix git

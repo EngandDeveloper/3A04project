@@ -105,7 +105,7 @@ public class ScoreController : MonoBehaviour
         if(player == 2){
             playerName = PlayerPrefs.GetString("p2Name");
         }
-        for(int i = 9; i >= 0; i--){
+        for(int i = 0; i < highScores.Length; i++){
             if(highScores[i] < score){
                 highScores[i] = score;
                 highNames[i] = playerName;
@@ -150,8 +150,8 @@ public class ScoreController : MonoBehaviour
     public static string innnovativeFeature(){
         string result = "Not enough data for prediction";
         PlayerPrefs.SetString("innovate", result);
-        string p1Name = PlayerPrefs.GetString("p1Name");
-        string p2Name = PlayerPrefs.GetString("p2Name");
+        string p1Name = PlayerPrefs.GetString("p1Name", "Player 1");
+        string p2Name = PlayerPrefs.GetString("p2Name", "Player2");
         int num1 = 0;
         int num2 = 0;
         for(int i = 0; i < highNames.Length; i++){

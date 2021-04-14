@@ -10,12 +10,12 @@ public class EndGameController : MonoBehaviour
     void Start()
     {
         int gameMode = PlayerPrefs.GetInt("gameMode", 1);
-        string p1Name = PlayerPrefs.GetString("p1Name");
+        string p1Name = PlayerPrefs.GetString("p1Name", "Player 1");
         float p1Score = PlayerPrefs.GetFloat("p1Score");
         if(gameMode == 1){
             resultText.text = "Player: " + p1Name + " --- Score: " + p1Score;
         }else if(gameMode == 2){
-            string p2Name = PlayerPrefs.GetString("p2Name");
+            string p2Name = PlayerPrefs.GetString("p2Name", "Player 2");
             float p2Score = PlayerPrefs.GetFloat("p2Score");
             string winner = "";
             if(p1Score > p2Score){

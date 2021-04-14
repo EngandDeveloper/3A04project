@@ -21,7 +21,7 @@ public class SpaceShooterPresentation : MonoBehaviour
         SetBox();
         ShowSpacecraft();
         EnemyStart();
-
+        Spaceship.health = 3;
     }
 
     // Update is called once per frame
@@ -113,6 +113,7 @@ public class SpaceShooterPresentation : MonoBehaviour
         SpaceShooterController.SetTime();
         SpaceShooterController.gameLevel = 1;
         SpaceShooterController.SetTime();
+        Spaceship.health = 3;
         var enemy = GameObject.FindGameObjectsWithTag("enemy");
         var laser1 = GameObject.FindGameObjectsWithTag("laser1");
         var laser2 = GameObject.FindGameObjectsWithTag("laser2");
