@@ -5,32 +5,17 @@ using UnityEngine;
 public class ScoreController : MonoBehaviour
 {
 
-    static float p1Score = 0f; 
-    static float p2Score = 0f; 
+    float p1Score = 0f; 
+    float p2Score = 0f; 
 
-    // GameController gameController;
-
-
-    public static void updateScore(float score){
-        int player = GameController.getTurn();
-        p1Score = PlayerPrefs.GetFloat("p1Score");
-        p2Score = PlayerPrefs.GetFloat("p2Score");
+    public void updateScore(int player, float score){
         if(player == 1){
             p1Score += score;
             PlayerPrefs.SetFloat("p1Score", p1Score);
-            Debug.Log("P1 Score: " + p1Score);
         }else if(player == 2){
             p2Score += score;
             PlayerPrefs.SetFloat("p2Score", p2Score);
-            Debug.Log("P2 Score: " + p2Score);
         }
-    }
-
-    public static void resetScores(){
-        p1Score = 0;
-        p2Score = 0;
-        PlayerPrefs.SetFloat("p1Score", p1Score);
-        PlayerPrefs.SetFloat("p2Score", p2Score);
     }
 
     public float getP1Score(){
@@ -46,12 +31,11 @@ public class ScoreController : MonoBehaviour
     {
         p1Score = PlayerPrefs.GetFloat("p1Score");
         p2Score = PlayerPrefs.GetFloat("p2Score");
-        // gameController = new GameController();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 }
