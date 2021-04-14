@@ -102,6 +102,7 @@ public class PatternMatchingController : MonoBehaviour
             float s = calculateScore();
             ScoreController.updateScore(s);
             GameController.endTurn();
+            ScoreController.validateHighScore();
         }
         //TODO: Based on the result congragulate the user or restart the game
     }
