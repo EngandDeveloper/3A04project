@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PatterMatchingGame.unity
     guid: 076dae7e38b275845ba80943917ac16d
+  - enabled: 1
+    path: Assets/Scenes/TetrisScene.unity
+    guid: 153e8d3a59ec5db42a4959129b663c66
+  - enabled: 1
+    path: Assets/Scenes/TetrisGameOver.unity
+    guid: adb894270d7c7e640994521dd2ef7f95
   m_configObjects: {}

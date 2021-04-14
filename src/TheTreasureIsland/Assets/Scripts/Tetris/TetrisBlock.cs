@@ -66,7 +66,7 @@ public class TetrisBlock : MonoBehaviour
                 transform.position -= new Vector3(0, -1, 0);
                 AddToGrid();
                 CheckForLines();
-                if (ScoreScript.scoreValue >= 10){
+                if (ScoreScript.scoreValue >= 1){
                     updateScore();
                     ScoreController.updateScore(currentScore);
                     GameController.endTurn();

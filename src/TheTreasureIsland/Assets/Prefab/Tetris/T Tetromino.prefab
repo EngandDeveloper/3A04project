@@ -44,11 +44,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 5933914586323795205}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b7cba163e0f99348ba1da80c2be9658, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ac985755b5e65447a9c9a8b31cb7554, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rotationPoint: {x: 0, y: 0, z: 0}
   fallTime: 0.8
+  scoreOneLine: 10
+  scoreTwoLines: 25
+  scoreThreeLines: 50
+  scoreFourLines: 100
+  maxScore: 1000
+  minScore: 100
+  currentScore: 0
+  isabove: 0
 --- !u!1 &5933914587304869546
 GameObject:
   m_ObjectHideFlags: 0
@@ -75,7 +83,7 @@ Transform:
   m_GameObject: {fileID: 5933914587304869546}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.95, y: 0.95, z: 0.95}
+  m_LocalScale: {x: 24, y: 24, z: 0.95}
   m_Children: []
   m_Father: {fileID: 5933914586323795206}
   m_RootOrder: 0
@@ -94,6 +102,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -105,6 +114,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -117,7 +127,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d5b76493abc202b4f9b11ede3d835bb6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 571b236ca097b944ea1081976556a03e, type: 3}
   m_Color: {r: 0.7854352, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -154,7 +164,7 @@ Transform:
   m_GameObject: {fileID: 5933914587444923189}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1, y: 0, z: 0}
-  m_LocalScale: {x: 0.95, y: 0.95, z: 0.95}
+  m_LocalScale: {x: 24, y: 24, z: 0.95}
   m_Children: []
   m_Father: {fileID: 5933914586323795206}
   m_RootOrder: 2
@@ -173,6 +183,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -184,6 +195,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -196,7 +208,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d5b76493abc202b4f9b11ede3d835bb6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 571b236ca097b944ea1081976556a03e, type: 3}
   m_Color: {r: 0.7854352, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -233,7 +245,7 @@ Transform:
   m_GameObject: {fileID: 5933914588169376234}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 0.95, y: 0.95, z: 0.95}
+  m_LocalScale: {x: 24, y: 24, z: 0.95}
   m_Children: []
   m_Father: {fileID: 5933914586323795206}
   m_RootOrder: 3
@@ -252,6 +264,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -263,6 +276,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -275,7 +289,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d5b76493abc202b4f9b11ede3d835bb6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 571b236ca097b944ea1081976556a03e, type: 3}
   m_Color: {r: 0.7854352, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -312,7 +326,7 @@ Transform:
   m_GameObject: {fileID: 5933914588220934196}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1, y: 0, z: 0}
-  m_LocalScale: {x: 0.95, y: 0.95, z: 0.95}
+  m_LocalScale: {x: 24, y: 24, z: 0.95}
   m_Children: []
   m_Father: {fileID: 5933914586323795206}
   m_RootOrder: 1
@@ -331,6 +345,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -342,6 +357,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -354,7 +370,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d5b76493abc202b4f9b11ede3d835bb6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 571b236ca097b944ea1081976556a03e, type: 3}
   m_Color: {r: 0.7854352, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 055551c40b5b1bf498adf4b9ae7965b2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0b387f6e32e38654c8eb3522001b851e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -114,15 +114,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 7962768407979841389}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b450d056ccc0137468f1950f94c52808, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c3d7364ed59d5640b3b0f253b2d8385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shipSpeed: 0
   rotSpeed: 0
   boundary: 0
   fireDelay: 0.25
-  laserPrefab: {fileID: 997735610535448296, guid: 97fe828735372c042bb1cd9b42982485,
+  laserPrefab: {fileID: 997735610535448296, guid: c4f5bab71f074f14899fbda608091caf,
     type: 3}
+  rend: {fileID: 0}
 --- !u!60 &7962768407979841362
 PolygonCollider2D:
   m_ObjectHideFlags: 0

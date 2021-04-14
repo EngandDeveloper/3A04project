@@ -159,16 +159,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a652803e6f7c124c8f9da6ca90fb972, type: 3}
+  m_Script: {fileID: 11500000, guid: 4dad623442e1ae64694721890a7f289e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 2976335677826131899, guid: 9f9a931866ae2f94b8a3b9003ed1c254,
+  enemyPrefab: {fileID: 2976335677826131899, guid: 13d865c2942dc624e9a90125cdcf14fa,
     type: 3}
-  spaceshipPrefab: {fileID: 7962768407979841389, guid: f21255a1464e25a4fa9d64313f32c5ba,
+  spaceshipPrefab: {fileID: 7962768407979841389, guid: ec5ab91037e4a7a43a61a07797367300,
     type: 3}
-  enemyBossPrefab: {fileID: 1058525575874132709, guid: e4ca1592b7a5a474ab5e4f5dc06b6c76,
+  enemyBossPrefab: {fileID: 1058525575874132709, guid: c5bb4283f8b4d3c4186c208207a811cd,
     type: 3}
-  propPrefab: {fileID: 5155627471667052749, guid: a85eca34b970b28469eaf5836c31e3c0,
+  propPrefab: {fileID: 5155627471667052749, guid: 0145c302bd5e52a4ebc6991d8679e6a1,
     type: 3}
 --- !u!20 &519420031
 Camera:
@@ -236,7 +236,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 316c42296f9f4da4bafa3f569836bcc0, type: 3}
+  m_Script: {fileID: 11500000, guid: ccbc64ee4bf36834da98651ac9b60899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &519420034
@@ -248,6 +248,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5bed85b3321dce4c8cbfefc5dfa6698, type: 3}
+  m_Script: {fileID: 11500000, guid: b9206663dc4425a4994194bff4031ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

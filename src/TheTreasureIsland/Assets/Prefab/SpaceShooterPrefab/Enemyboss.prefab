@@ -42,10 +42,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1058525575874132709}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99ec2b2b82b182441b49e8a78ee7f8d5, type: 3}
+  m_Script: {fileID: 11500000, guid: 84eeff720e05fa344ab5b562879bab51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserPrefab: {fileID: 4286734720438100480, guid: f790f70ed12e9e84a96e79a1b3ea3dd3,
+  laserPrefab: {fileID: 4286734720438100480, guid: f0a3c066e67489e408c9e72efea9e7be,
     type: 3}
 --- !u!61 &1058525575874132706
 BoxCollider2D:
@@ -143,7 +143,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 66a2f153d98bf6849847d0395190f635, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c061fd60f2701c44eac12dd45b6c48a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
