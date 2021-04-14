@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpaceShooterPresentation : MonoBehaviour
 {
@@ -30,7 +31,8 @@ public class SpaceShooterPresentation : MonoBehaviour
         ExitMiniGfame();
         ShowProp();
         ShowEnemyBoss();
-        reStart();
+        // reStart();
+        endGame();
     }
 
     private void SetBox()
@@ -133,6 +135,16 @@ public class SpaceShooterPresentation : MonoBehaviour
             Instantiate(enemyPrefab);
         }
 
+    }
+
+    public void endGame(){
+        if (SpaceShooterController.GetHealth() <= 0)
+        {
+            float pScore = (float) SpaceShooterAbstraction.score;
+            ScoreController.updateScore(pScore);
+            GameController.endTurn();
+            SceneManager.LoadScene(7);
+        }
     }
 
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 
 public class PatternMatchingController : MonoBehaviour
 {
@@ -102,7 +103,7 @@ public class PatternMatchingController : MonoBehaviour
             float s = calculateScore();
             ScoreController.updateScore(s);
             GameController.endTurn();
-            ScoreController.validateHighScore();
+            SceneManager.LoadScene(7);
         }
         //TODO: Based on the result congragulate the user or restart the game
     }

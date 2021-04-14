@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class uiManager : MonoBehaviour {
 
@@ -35,7 +36,7 @@ public class uiManager : MonoBehaviour {
 
 	void scoreUpdate(){
 		if (gameOver == false) {
-			score += 1;
+			score += 2;
 		}
 
 	}
@@ -50,6 +51,7 @@ public class uiManager : MonoBehaviour {
 		float FinalScore = (4000/((float)getElapsedTime())) + 200.0f;
 		ScoreController.updateScore(FinalScore);
         GameController.endTurn();
+		SceneManager.LoadScene(7);
 		//////////////////////
 		//////////////////////
 		//////GameEnded///////

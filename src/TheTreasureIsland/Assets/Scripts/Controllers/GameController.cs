@@ -19,6 +19,10 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene(index);
     }
 
+    public static void gamePageScreen(){
+        SceneManager.LoadScene(4);
+    }
+
     public void exitGamePageScreen(){
         changeScene(4);
     }
