@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class PatternMatchingController : MonoBehaviour
 {
@@ -32,6 +33,13 @@ public class PatternMatchingController : MonoBehaviour
     bool isFirst = true; //use it to show the pattern
     bool isTrue; //use it to check the player answer correctness
     PatternMatchingAbstraction abstraction;
+    public Text timerText;
+    public DateTime startTime;
+    public DateTime currentTime;
+    float endTime;
+    float score;
+    float MAX_SCORE = 2000.0f;
+    GameController gameController;
     //***** Variables End *****\\
 
 
@@ -39,13 +47,9 @@ public class PatternMatchingController : MonoBehaviour
         abstraction.generatePattern();
         currentMap = abstraction.getPatternMap();
         
-        /* Debug logs to see the current map generation*/
-        // Debug.Log("Current Map is:");
-        
-        // for(int i = 0; i < currentMap.Length; i++){
-        //     Debug.Log(currentMap[i]);
-        // }
 
+        //Start timer
+        startTime = DateTime.Now;
         for(int i = 0; i < currentMap.Length; i++){
             if(currentMap[i] == 1){
                 ColorBlock c = buttons[i].GetComponent<Button>().colors;
@@ -64,18 +68,18 @@ public class PatternMatchingController : MonoBehaviour
     }
 
 
-    // public void onStartLevelClicked(){
-    //     StopCoroutine("showPattern");
-    //     StartCoroutine("showPattern");
-    //     isFirst = false;
-    // }
+    float calculateScore(){
+        score = (MAX_SCORE/endTime) + 200;
+        Debug.Log(score);
+        return score;
+    }
 
     /**
     * @brief get the id of the button pressed and assign it to the answerMap
     */
     public void getButtonId(int btnIndex){
         answerMap[btnIndex] = 1; //Set the answer
-        Debug.Log(btnIndex);
+        // Debug.Log(btnIndex);
     }
 
     /**
@@ -90,6 +94,15 @@ public class PatternMatchingController : MonoBehaviour
             }
         }
         Debug.Log(isTrue);
+        if(isTrue){
+            var timeDifference = currentTime.Subtract(startTime);
+            var differenceInSeconds = (float) timeDifference.TotalSeconds;
+            endTime = differenceInSeconds;
+            Debug.Log(endTime);
+            float s = calculateScore();
+            ScoreController.updateScore(s);
+            GameController.endTurn();
+        }
         //TODO: Based on the result congragulate the user or restart the game
     }
 
@@ -109,7 +122,8 @@ public class PatternMatchingController : MonoBehaviour
         buttons = new Button[] {B0, B1, B2, B3, B4, B5, B6, B7, B8, B9, B10, B11, B12, B13, B14, B15};
         answerMap = new int[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         abstraction = new PatternMatchingAbstraction();
-
+        gameController = new GameController();
+        timerText.text = "00:00";
         // currentMap = new int[] {0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1};
         // StopCoroutine("showPattern");    // Interrupt in case it's running
         // StartCoroutine("showPattern");
@@ -122,6 +136,13 @@ public class PatternMatchingController : MonoBehaviour
             StopCoroutine("showPattern");    // Interrupt in case it's running
             StartCoroutine("showPattern");
             isFirst = false;
+        }
+        if(!isTrue){
+            currentTime = DateTime.Now;
+            var timeDifference = currentTime.Subtract(startTime);
+            var differenceInSeconds = (float) timeDifference.TotalSeconds;
+            TimeSpan timer = TimeSpan.FromSeconds(differenceInSeconds);
+            timerText.text = $" \n {timer:mm\\:ss}";
         }
     }
 
